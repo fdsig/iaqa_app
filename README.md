@@ -10,7 +10,9 @@ to set up virtual enviroment for porject:
 ```
 
 [torch](https://pytorch.org/tutorials/recipes/deployment_with_flask.html)
+
 [flask](https://flask.palletsprojects.com/en/2.0.x/)
+
 [model](https://drive.google.com/file/d/1-Mc5OwRtQfCEqqo7_fnCpzpJ7gFhohQp/view?usp=sharing)
 
 **To do**
