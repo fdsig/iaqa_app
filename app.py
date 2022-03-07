@@ -26,16 +26,16 @@ def success():
         f = request.files['file']
         saveLocation = f.filename
         f.save(saveLocation)
-        inference, confidence = model.infer(saveLocation)
+        inference  = model.infer(saveLocation)
         # make a percentage with 2 decimal points
-        confidence = floor(confidence * 10000) / 100
+
         # delete file after making an inference
         os.remove(saveLocation)
         # respond with the inference
-        return render_template('inference.html', name=inference, confidence=confidence)
+        return render_template('inference.html', name=round(float(inference[0][0]),2), confidence=round(float(inference[0][1]),2))
 
 
 if __name__ == '__main__':
     app.debug = True
     port = int(os.environ.get("PORT", 80))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
