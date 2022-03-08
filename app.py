@@ -33,7 +33,7 @@ def success():
             # delete file after making an inference
             os.remove(saveLocation)
             # respond with the inference
-            return render_template('inference.html', name=round(float(inference[0][0]),2), confidence=round(float(inference[0][1]),2))
+            return render_template('inference.html', name=round(float(inference[0][1]),2), confidence=round(float(inference[0][0]),2))
         except:
             return render_template('index.html')
 
