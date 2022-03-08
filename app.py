@@ -23,17 +23,19 @@ def about():
 @app.route('/infer', methods=['POST'])
 def success():
     if request.method == 'POST':
-        f = request.files['file']
-        saveLocation = f.filename
-        f.save(saveLocation)
-        inference  = model.infer(saveLocation)
-        # make a percentage with 2 decimal points
+        try:
+            f = request.files['file']
+            saveLocation = f.filename
+            f.save(saveLocation)
+            inference  = model.infer(saveLocation)
+            # make a percentage with 2 decimal points
 
-        # delete file after making an inference
-        os.remove(saveLocation)
-        # respond with the inference
-        return render_template('inference.html', name=round(float(inference[0][0]),2), confidence=round(float(inference[0][1]),2))
-
+            # delete file after making an inference
+            os.remove(saveLocation)
+            # respond with the inference
+            return render_template('inference.html', name=round(float(inference[0][0]),2), confidence=round(float(inference[0][1]),2))
+        except:
+            return render_template('index.html')
 
 if __name__ == '__main__':
     app.debug = True
