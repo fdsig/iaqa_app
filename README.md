@@ -2,6 +2,9 @@
 ### Currently under development
 ### Flask/PyTorch  Web app/api for image quality assessment inference
 
+![](samples/app.gif)
+
+
 to set up virtual environment for project: 
 
 ```bash

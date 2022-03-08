@@ -2,11 +2,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+  p {
+   text-align:center
+  }
+  </style>
 <div class="row">
   <div class="col-sm-8 offset-sm-2">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Image Aesthetic Quality Inference App</h1>
-      <p class="lead">This is an example of current state of the art vision transformers for Image Aesthetic Quality Assesment (IQA) <br> <a
+      <p class="lead">This is an example of current state of the art vision transformers for Image Aesthetic Quality Assesment (IAQA) <br> <a
           href="https://github.com/fdsig/iaqa_app"> View on GitHub</a></p>
     </div>
   </div>
@@ -28,12 +33,11 @@
     </form>
   </div>
   <div class="row">
-    <div class="col-sm-6 offset-sm-3 my-5">
-      <center>
-        <p class="text-muted">
-         The model classifies images into high and low quality and gives a probability of high or low quality images.
+    <div class="offset-sm-3 my-5">
+      <div class="text-muted text-center">
+        <p class="lead">The model classifies images into high and low quality and gives a probability of high or low quality images. <br>
         </p>
-      </center>
+      </div>
     </div>
   </div>
 </div>

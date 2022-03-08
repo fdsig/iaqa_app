@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from numpy import Inf
 from src import models,predict
 import os 
+import shutil
 
 app = Flask(__name__)
 
@@ -11,7 +12,6 @@ model_name = models.Models()
 
 model = predict.Model(name=model_name.default)
 test = model.infer('uploads/730394.jpg')
-print(test)
 
 @app.route('/')
 def index():
@@ -29,13 +29,16 @@ def success():
             f = request.files['file']
             saveLocation = f.filename
             f.save(saveLocation)
-            print(saveLocation)
+     
             inference  = model.infer(saveLocation)
-            print(inference)
+   
             # make a percentage with 2 decimal points
 
             # delete file after making an inference
-            #os.remove(saveLocation)
+            im_PATH = model.wd/'saved_images'
+            im_PATH = im_PATH/saveLocation
+        
+            shutil.move(saveLocation, im_PATH)
             # respond with the inference
             return render_template('inference.html', name=round(float(inference[0][1]),2), confidence=round(float(inference[0][0]),2))
         except:
