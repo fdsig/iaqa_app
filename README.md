@@ -1,11 +1,20 @@
-# Image Aesthetic Quality Assesment(iaqa)  web gui app and api (for remote inference)
+# Image Aesthetic Quality Assessment (IAQA)  web gui app and api (for remote inference)
 ### Currently under development
-### Flask/PyTorch  Web app/api for image quality assment inference
+### Flask/PyTorch  Web app/api for image quality assessment inference
 
-to set up virtual enviroment for porject: 
+to set up virtual environment for project: 
 
 ```bash
+pyenv virtualenv 3.9.5 app_env
+pyenv activate app_env
+pip install -r requirements.txt
+```
 
+to run app:
+
+```bash
+pyenv activate app_env
+python app.py
 
 ```
 
@@ -17,9 +26,14 @@ to set up virtual enviroment for porject:
 
 **To do**
 
-- [ ] set up basic template (local)
-- [ ] test local with model ConViT Base
-- [ ] 
-- [ ] 
+- [x] set up basic template (local)
+- [x] test local with model ConViT Base
+- [x] fix initial bugs around missing file 
+- [ ] set default images to try
+- [ ] set classification to bool (high = True/False)
+- [ ] create API in addition to GUI
+- [ ] save images folder
+- [ ] handle errors in file types/type checking and missing files
+- [ ] deploy within docker
 
-appologies for tipos README.md may have been edited in vim/or on the fly on my phone  
+apologies for typos README.md may have been edited in vim/or on the fly.
