@@ -5,10 +5,13 @@ from albumentations import pytorch
 import torch.nn.functional as F
 import torch.nn as nn
 import timm
+from pathlib import Path
 
-
-class Convit:
-    def __init__(self):
+class Model:
+    def __init__(self,name=None):
+        self.wd = Path.cwd()
+        self.models_path = self.wd/'models'
+        self.name = name 
         self.model_name = 'convit_tiny'
         self.model, self.device = self.load()
         self.preprocess = A.Compose([
@@ -21,11 +24,12 @@ class Convit:
             A.pytorch.transforms.ToTensorV2(transpose_mask=False, p=1.0)]
         )
         self.device = torch.device('cpu')
-        
+       
 
     def load(self):
         device = torch.device('cpu')
-        weights = torch.load('convit_tiny.pth', map_location=device)
+        model = self.models_path/self.name
+        weights = torch.load(model, map_location=device)
         weights = weights['model']
         model = timm.create_model(self.model_name, pretrained=True)
         model.head = nn.Linear(model.head.in_features, 2, bias=True)
@@ -47,3 +51,5 @@ class Convit:
             output = self.model(img_normalized)
             sm = torch.nn.Softmax(dim=1)
             return sm(output)
+
+
