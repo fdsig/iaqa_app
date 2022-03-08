@@ -11,7 +11,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 model_name = models.Models()
 
 model = predict.Model(name=model_name.default)
-test = model.infer('uploads/730394.jpg')
+test = model.infer('samples/730394.jpg')
 
 @app.route('/')
 def index():
