@@ -23,7 +23,8 @@ python app.py
 
 ### Container:
 
- Docker image of app can be found [here](https://hub.docker.com/repository/docker/fdsig/iaqa-app)  <img src=https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png width=30>
+ Docker image of app can be found [here  <img src=https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png width=30>
+](https://hub.docker.com/repository/docker/fdsig/iaqa-app)  
 
 ### Resources:
 
