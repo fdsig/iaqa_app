@@ -21,6 +21,12 @@ python app.py
 
 ```
 
+### Container:
+
+ Docker image of app can be found [here](https://hub.docker.com/repository/docker/fdsig/iaqa-app)  <img src=https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png width=30>
+
+### Resources:
+
 [torch](https://pytorch.org/tutorials/recipes/deployment_with_flask.html)
 
 [flask](https://flask.palletsprojects.com/en/2.0.x/)
